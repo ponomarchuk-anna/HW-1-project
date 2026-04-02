@@ -11,7 +11,7 @@ from dataset import ASLDataset, train_transform
 from evaluate import evaluate
 from seed import set_seed
 
-configuration_path = 'configs/baseline.yaml' # путь до конфигурационного файла
+configuration_path = 'configs/baseline_v2.yaml' # путь до конфигурационного файла
 
 def load_config(config_path):
     with open(config_path, 'r', encoding='utf-8') as f:
