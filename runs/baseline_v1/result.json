@@ -1,0 +1,1 @@
+{"best_epoch": 9, "best_validation_accuracy": 1.0, "best_validation_macro_f1": 1.0, "operating_point": "argmax", "model_name": "resnet18", "num_classes": 29, "seed": 42}

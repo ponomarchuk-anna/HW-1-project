@@ -1,6 +1,5 @@
 from pathlib import Path
 import json
-from typing import Any
 
 from PIL import Image
 from torch.utils.data import Dataset
