@@ -149,7 +149,7 @@ just_transform = StressTransformations( # случай без стресс-те�
     image_size=data_cfg['image_size'],
     mean=data_cfg['normalize']['mean'],
     std=data_cfg['normalize']['std'],
-    scenario_name=None,
+    transformation_name=None,
     alpha=None
 )
 
@@ -182,7 +182,7 @@ all_rows.extend(just_rows)
 print('Результаты, полученные без стресс-тестов\n',
       'accuracy =', just_summary['accuracy'],
       'macro_f1 =', just_summary['macro_f1'],
-      'amount of errors =', just_summary['num_errors'],
+      'amount of errors =', just_summary['amount_of_errors'],
       sep='\n'
 )
 
@@ -197,7 +197,7 @@ for transformation_number, (transformation_name, transformation_information) in 
             image_size=data_cfg['image_size'],
             mean=data_cfg['normalize']['mean'],
             std=data_cfg['normalize']['std'],
-            scenario_name=transformation_name,
+            transformation_name=transformation_name,
             alpha=alpha
         )
 
@@ -220,7 +220,7 @@ for transformation_number, (transformation_name, transformation_information) in 
             loader=current_loader,
             dataset=current_dataset,
             device=device,
-            scenario_name=transformation_name,
+            transformation_name=transformation_name,
             alpha=alpha
         )
 
@@ -230,7 +230,7 @@ for transformation_number, (transformation_name, transformation_information) in 
         print('Параметр равен', alpha,
               'accuracy =', current_summary['accuracy'],
               'macro_f1 =', current_summary['macro_f1'],
-              'amount of errors =', current_summary['num_errors'],
+              'amount of errors =', current_summary['amount_of_errors'],
               sep='\n'
             )
 
@@ -244,7 +244,7 @@ with open(path_to_result / 'predictions_for_stress_tests.csv', 'w', encoding='ut
             'transformation',
             'alpha',
             'image_path',
-            'true_index',
+            'true_label',
             'true_class',
             'predicted_index',
             'predicted_class',
