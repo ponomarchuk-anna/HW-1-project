@@ -2,7 +2,6 @@ import json
 import re
 
 from pathlib import Path
-from sklearn.model_selection import train_test_split
 
 root_directory = Path(r'data/raw_data')
 path_to_split_json = Path(r'splits/v2.json') # вторая версия разбиения на выборки
